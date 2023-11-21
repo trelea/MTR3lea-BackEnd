@@ -21,3 +21,10 @@ PUT    /api/content/:post_id
 DELETE /api/content/:post_id
 PUT    /api/content/like/:post_id
 ```
+
+### Comment Routes:
+```javascript
+POST   /api/comment/:post_id 
+PUT    /api/comment/:comment_id
+DELETE /api/comment/:comment_id
+```
