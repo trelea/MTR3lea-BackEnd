@@ -28,3 +28,9 @@ POST   /api/comment/:post_id
 PUT    /api/comment/:comment_id
 DELETE /api/comment/:comment_id
 ```
+
+### User Routes
+```javascript
+GET    /api/user/profile
+GET    /api/user/:user_name
+```
