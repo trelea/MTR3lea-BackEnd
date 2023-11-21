@@ -33,4 +33,8 @@ DELETE /api/comment/:comment_id
 ```javascript
 GET    /api/user/profile
 GET    /api/user/:user_name
+
+...
+
+Settings User Profile not implemented..
 ```
