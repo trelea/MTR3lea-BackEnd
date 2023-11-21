@@ -19,5 +19,5 @@ GET    /api/content/:post_id
 POST   /api/content/
 PUT    /api/content/:post_id
 DELETE /api/content/:post_id
-PUT.   /api/content/like/:post_id
+PUT    /api/content/like/:post_id
 ```
