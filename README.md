@@ -5,7 +5,7 @@ In this repository is the souce code, config files, middlewares and controllers 
 ## All Routes:
 
 ### Auth Routes:
-javascript```
+```javascript
  /api/auth/signin
 - /api/auth/signup
 - /api/auth/verification
