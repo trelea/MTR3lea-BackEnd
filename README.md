@@ -6,33 +6,33 @@ In this repository is the souce code, config files, middlewares and controllers 
 
 ### Auth Routes
 ```javascript
-POST   /api/auth/signin
-POST   /api/auth/signup
-POST   /api/auth/verification
-POST   /api/auth/signout
+POST    /api/auth/signin
+POST    /api/auth/signup
+POST    /api/auth/verification
+POST    /api/auth/signout
 ```
 
 ### Content Routes
 ```javascript
-GET    /api/content/?page={pageNr}&limit={limitPosts}
-GET    /api/content/:post_id
-POST   /api/content/
-PUT    /api/content/:post_id
-DELETE /api/content/:post_id
-PUT    /api/content/like/:post_id
+GET     /api/content/?page={pageNr}&limit={limitPosts}
+GET     /api/content/:post_id
+POST    /api/content/
+PUT     /api/content/:post_id
+DELETE  /api/content/:post_id
+PUT     /api/content/like/:post_id
 ```
 
 ### Comment Routes
 ```javascript
-POST   /api/comment/:post_id 
-PUT    /api/comment/:comment_id
-DELETE /api/comment/:comment_id
+POST    /api/comment/:post_id 
+PUT     /api/comment/:comment_id
+DELETE  /api/comment/:comment_id
 ```
 
 ### User Routes
 ```javascript
-GET    /api/user/profile
-GET    /api/user/:user_name
+GET     /api/user/profile
+GET     /api/user/:user_name
 
 ...
 
