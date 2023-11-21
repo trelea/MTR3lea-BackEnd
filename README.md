@@ -14,10 +14,10 @@ POST /api/auth/signout
 
 ### Content Routes:
 ```javascript
-GET /api/content/?page={pageNr}&limit={limitPosts}
-GET /api/content/:post_id
-POST /api/content/
-/api/content/
-/api/content/
-/api/content/
+GET    /api/content/?page={pageNr}&limit={limitPosts}
+GET    /api/content/:post_id
+POST   /api/content/
+PUT    /api/content/:post_id
+DELETE /api/content/:post_id
+PUT.   /api/content/like/:post_id
 ```
