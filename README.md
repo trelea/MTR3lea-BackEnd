@@ -2,9 +2,9 @@
 
 In this repository is the souce code, config files, middlewares and controllers of MTR3lea Backend Platform. 
 
-## All Routes:
+## All Routes
 
-### Auth Routes:
+### Auth Routes
 ```javascript
 POST /api/auth/signin
 POST /api/auth/signup
@@ -12,7 +12,7 @@ POST /api/auth/verification
 POST /api/auth/signout
 ```
 
-### Content Routes:
+### Content Routes
 ```javascript
 GET    /api/content/?page={pageNr}&limit={limitPosts}
 GET    /api/content/:post_id
@@ -22,7 +22,7 @@ DELETE /api/content/:post_id
 PUT    /api/content/like/:post_id
 ```
 
-### Comment Routes:
+### Comment Routes
 ```javascript
 POST   /api/comment/:post_id 
 PUT    /api/comment/:comment_id
