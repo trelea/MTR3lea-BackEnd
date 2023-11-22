@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
         const sqlQuery = "INSERT INTO posts (user_name, post_title, post_description, post_thumbnail) VALUES ($1, $2, $3, $4) RETURNING *";
         const values = [currentUser, title, description, postThumb]
         const newPost = await db.query(sqlQuery, values);
-        const post = newPost.rows[0]
+        const post = newPost.rows[0].post_id
         return res.status(200).json({
             msg: "New Post Created.",
             post
