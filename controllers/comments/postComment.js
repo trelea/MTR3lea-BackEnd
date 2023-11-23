@@ -3,7 +3,8 @@ const db = require('../../config/db');
 module.exports = async (req, res) => {
 
     const { id } = req.params;
-    var { comment } = req.body;
+    let { comment } = req.body;
+
     
     
     try {
