@@ -8,6 +8,9 @@ const updatePost = require('../controllers/posts/updatePost');
 const deletePost = require('../controllers/posts/deletePost');
 const likePost = require('../controllers/posts/likePost');
 const searchPosts = require('../controllers/posts/searchPosts');
+const getTop10 = require('../controllers/additional/getTop10');
+
+router.get('/top10', getTop10);
 
 router.get('/', getPosts);
 router.get('/:id', verifyToken, getPost);
@@ -17,5 +20,7 @@ router.delete('/:id', verifyToken, deletePost);
 router.get('/search/:post_title', searchPosts);
 
 router.put('/like/:id', verifyToken, likePost);
+
+
 
 module.exports = router
