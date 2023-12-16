@@ -2,7 +2,6 @@ const db = require('../../config/db');
 
 module.exports = async (req, res) => {
     const { id } = req.params;
-    console.log(req.params);
 
     try {
         const queryPost = await db.query("SELECT t1.post_id, t1.user_name, t2.user_thumbnail, t1.post_title, t1.post_description, t1.post_thumbnail, t1.post_likes, t1.post_comments, t1.post_created_at, t1.post_updated_at FROM posts t1 JOIN users t2 ON t1.user_name = t2.user_name WHERE t1.post_id=$1", [id]);
