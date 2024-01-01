@@ -22,7 +22,7 @@ module.exports = async(req, res) => {
     }
 
     //CHECK IF USER NOT EXISTS THEN INSERT INTO DB
-    //try {
+    try {
 
         const existentUser = await db.query("SELECT user_name FROM users WHERE user_name=$1", [username]);
         const existenmtEmail = await db.query("SELECT user_email FROM users WHERE user_email=$1", [email]);
@@ -65,17 +65,17 @@ module.exports = async(req, res) => {
         sendCode(email, OTPcode);
 
         return res.status(200).json({
-            user_otp: OTPcode,
+            //user_otp: OTPcode,
             user_ip: (req.ip).replace('::ffff:', ''),
             user_email: `${email}`,
             otp_expire: '1h'
         }).end();
     
     
-    //} catch (err) {
-    //    return res.status(500).json({
-    //        msg: "Something Went Wrong",
-    //        error: err
-    //    }).end();
-    //};
+    } catch (err) {
+        return res.status(500).json({
+            msg: "Something Went Wrong",
+            error: err
+        }).end();
+    };
 }

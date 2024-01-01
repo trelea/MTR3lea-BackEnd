@@ -39,6 +39,10 @@ module.exports = async (req, res) => {
             hashedPassword ,
             't'
         ]);
+        await db.query("INSERT INTO users_additional_info (user_name, user_additional_name) VALUES ($1, $2)", [
+            decodedVerifcation.newUser ,
+            decodedVerifcation.newUser
+        ]);
         const User = newUser.rows[0];
         deleteCookies(res);
         return res.status(200).json({

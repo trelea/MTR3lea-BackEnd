@@ -1,7 +1,7 @@
 
 -- CREATE DATA BASE --
 
-CREATE DATABASE PrikolDataBase;
+CREATE DATABASE MTR3lea;
 
 --------------------------
 --  CREATE TABLE USERS  --
@@ -17,6 +17,22 @@ CREATE TABLE USERS (
     user_thumbnail VARCHAR DEFAULT '/images/profilesThumbnails/defaultUserProfileThumbnail.png' NOT NULL,
 
     user_isVerified BOOLEAN DEFAULT false NOT NULL,
+
+    user_created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    user_updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+
+------------------------------------------
+--  CREATE TABLE USERS ADDITIONAL INFOS --
+------------------------------------------
+CREATE TABLE USERS_ADDITIONAL_INFO (
+    id BIGSERIAL,
+
+    user_name VARCHAR(255) NOT NULL,
+    FOREIGN KEY (user_name) REFERENCES users(user_name) ON DELETE CASCADE,
+    user_additional_name VARCHAR(255) NOT NULL,
+    user_description VARCHAR DEFAULT 'no description ...' NOT NULL,
 
     user_created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     user_updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
@@ -57,6 +73,6 @@ CREATE TABLE COMMENTS (
     user_name VARCHAR(255) NOT NULL,
     comment_text VARCHAR NOT NULL,
 
-    post_created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    post_updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    comment_created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    comment_updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );

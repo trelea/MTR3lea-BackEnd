@@ -18,7 +18,7 @@ module.exports = async(req, res) => {
     }
 
     //CHECK IF USER EXISTS
-    //try {
+    try {
         const existentUserData = await db.query("SELECT * FROM users WHERE user_email=$1", [email]);
 
         if (existentUserData.rowCount === 1) { 
@@ -57,10 +57,10 @@ module.exports = async(req, res) => {
 
                 return res.status(200).json({
                     msg: 'Logged In.',
-                    user_id: existentUserData.rows[0].user_id,
-                    user_name: existentUserData.rows[0].user_name,
-                    user_thumbnail: existentUserData.rows[0].user_thumbnail,
-                    user_token: encryptText(token)
+                    //user_id: existentUserData.rows[0].user_id,
+                    //user_name: existentUserData.rows[0].user_name,
+                    //user_thumbnail: existentUserData.rows[0].user_thumbnail,
+                    //user_token: encryptText(token)
                 }).end();
             }
             return res.status(201).json({
@@ -70,10 +70,10 @@ module.exports = async(req, res) => {
         return res.status(201).json({
             msg: `invalid email or password`
         }).end()   
-    //} catch (err) {
-    //    return res.status(500).json({
-    //        msg: "Something Went Wrong",
-    //        error: err
-    //    }).end()
-    //}
+    } catch (err) {
+        return res.status(500).json({
+            msg: "Something Went Wrong",
+            error: err
+        }).end()
+    }
 }

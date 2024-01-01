@@ -3,16 +3,15 @@ import faker as fk
 fk = fk.Faker()
 
 dicUsers = {
-    "johnperkins@gmail.com" : "^iBTPNH2Q6husband",
-    "pughbrittany@rios-thomas.biz" : "%4&#NZ7l^6first",
-    "kendra81@yahoo.com" : "XS9MRFVxX(next",
-    "kevingreene@gmail.com" : "1k*5RtlNuHtoo",
-    "destiny13@powell.net" : "qlMxf6x*@6security",
-    "gibsontara@wilson.com" : "R2NdMmrW_Carm",
-    "caseysullivan@davies.com" : "r%t0EJl73@south",
-    "huntsarah@gmail.com" : "(1D%Rq_1JYconcern",
-    "vanessa26@robertson.net" : "^49WrRkxs2ten",
-    "sandovalrobert@yahoo.com" : "r&t_6XqTZCwind",
+    "richardbaker@hotmail.com" : "%_6p4CrH5_choose",
+    "michaelwise@yahoo.com" : "V&5+Ms#ptRdinner",
+    "stacey45@miller-rose.com" : "%rLw&VKhV0minute",
+    "richarddavid@bennett-curry.biz" : "0QfA#dbu*won",
+    "bsimmons@gmail.com" : "*2fO#grgSDask",
+    "gonzalezevan@yahoo.com" : "8uRHlgfs#Omust",
+    "erik39@graves.com" : "o61+Y*jwd&country",
+    "thompsonjon@hotmail.com" : "$0Gy2LMn)kblue",
+    "austingina@gmail.com" : "%qQ74tykI0interest"
 }
 
 def login(email: str, pswd: str):
