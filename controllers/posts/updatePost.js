@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
             }).end()
         }
 
-        var postThumb = '/images/postsThumbnails/defaultPostThumbnail.jpg';
+        var postThumb = existentPost.rows[0].post_thumbnail;
         if (req.file) {
             if (req.file.mimetype === 'image/png' ||
                 req.file.mimetype === 'image/jpeg'||
