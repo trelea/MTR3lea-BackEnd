@@ -23,4 +23,4 @@ router.put('/like/:id', verifyToken, likePost);
 
 
 
-module.exports = router
+module.exports = router;

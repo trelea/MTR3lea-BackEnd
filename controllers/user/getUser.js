@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
         
         if (existentUserData.rowCount === 1) {
 
-            const getUserPosts = await db.query("SELECT t1.id, t1.post_id, t1.user_name, t2.user_thumbnail, t1.post_title, t1.post_thumbnail, t1.post_likes, t1.post_comments, t1.post_created_at, t1.post_updated_at FROM posts t1 JOIN users t2 ON t1.user_name = t2.user_name WHERE t1.user_name=$1", [user_name]);
+            const getUserPosts = await db.query("SELECT t1.id, t1.post_id, t1.user_name, t2.user_thumbnail, t1.post_title, t1.post_thumbnail, t1.post_likes, t1.post_comments, t1.post_created_at, t1.post_updated_at FROM posts t1 JOIN users t2 ON t1.user_name = t2.user_name WHERE t1.user_name=$1 ORDER BY t1.id DESC", [user_name]);
             const getUserInfos = await db.query("SELECT t1.user_name, t1.user_additional_name, t1.user_description, t2.user_thumbnail, t1.user_created_at FROM users_additional_info t1 JOIN users t2 ON t1.user_name = t2.user_name WHERE t1.user_name=$1", [user_name]);
 
             const posts = getUserPosts.rows;

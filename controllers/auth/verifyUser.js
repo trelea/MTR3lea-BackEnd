@@ -29,8 +29,7 @@ module.exports = async (req, res) => {
     }
 
     const decodedVerifcation = jwt.decode(decryptText(req.cookies.newUserVerificationInfo));
-    const salt = bcrypt.genSaltSync(10);
-    const hashedPassword = bcrypt.hashSync(password, salt);
+    const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
     if (decodedVerifcation.newUserOTP === Number(otpCode)) {
         const newUser = await db.query("INSERT INTO users (user_name , user_email , user_dateofbirth , user_password , user_isverified) VALUES ($1 , $2, $3, $4, $5) RETURNING *", [
             decodedVerifcation.newUser ,
