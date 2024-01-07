@@ -4,6 +4,7 @@ const fs = require('node:fs')
 const deletePostThumbnail = (path) => {
     try {
         let arr = __dirname.split('\\');
+        console.log(arr);
         for (let i = 0; i < 2; i++) arr.pop();
         fs.unlinkSync(`${arr.join('/')}/uploads${path}`);
     } catch (err) {
