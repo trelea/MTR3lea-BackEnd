@@ -20,6 +20,8 @@ POST    /api/content/
 PUT     /api/content/:post_id
 DELETE  /api/content/:post_id
 PUT     /api/content/like/:post_id
+GET     /api/content/search/:post_title
+GET     /api/content/top10
 ```
 
 ### Comment Routes
@@ -33,8 +35,14 @@ DELETE  /api/comment/:comment_id
 ```javascript
 GET     /api/user/profile
 GET     /api/user/:user_name
-
-...
-
-Settings User Profile not implemented..
 ```
+
+### Settings Routes
+```javascript
+POST    /api/settings/generatepswdtoken
+PUT     /api/settings/resetpswd
+PUT     /api/settings/updateprofile
+PUT     /api/settings/removethumb
+DELETE  /api/settings/deleteacc
+```
+
