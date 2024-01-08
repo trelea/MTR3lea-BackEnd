@@ -21,7 +21,7 @@ const route404 = require('./config/route404');
 //GENERAL MIDDLEWARES
 app.use(cookieParser());
 app.use(cors({
-    origin: ["http://localhost:3000", "http://92.115.2.5:3000", "http://192.168.1.4:3000"],
+    origin: ["http://localhost:3000"],
     credentials: true
 }));
 app.use(express.json());
